@@ -16,3 +16,32 @@ On the Python side, the `behavior_name` component is located under the Bridge cl
 behavior_name = bridge.behavior_name
 agent_name = bridge.agent_names[agent_index]
 ```
+
+### Unity Side ###
+To use the RLBridge package in Unity, first create an empty GameObject, and then add the `Bridge.cs` script to this GameObject. Below are some features described for the Bridge script.
+
+`agents` You need to add the agents present in your scene to this section for the bridge to access them.
+
+`Ip` `Port` Represents the IP address and port where the listening will occur.
+
+`timeScale` It serves to change the flow speed of the simulation. (1 is normal flow speed)
+
+`maxClients` It represents the maximum number of clients that can connect to the simulation environment.
+
+`numClients` It represents the number of clients connected to the simulation environment.
+
+`BeginEnv()` Starts the simulation. Should be executed after all clients have connected.
+
+To create an agent in the Unity environment, create a new script and include the RLBridge namespace in the script. Inherit the class in the script from the AgentBehavior class and override the relevant methods. 
+
+```
+using UnityEngine;
+using RLBridge;
+
+public class YourAgentScript : AgentBehavior
+{
+    // Override methods from AgentBehavior class
+}
+```
+
+Below are the details of the AgentBehavior
