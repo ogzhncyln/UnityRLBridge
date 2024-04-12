@@ -30,7 +30,7 @@ class Bridge:
                 self.observation_size = begin_connection_response_msg.observation_size
                 self.continuous_action_size = begin_connection_response_msg.continuous_action_size
                 self.discrete_action_size = begin_connection_response_msg.discrete_action_size
-                self.client_names = begin_connection_response_msg.clients
+                self.agent_names = begin_connection_response_msg.agent_names
                 
             print("Connected.")
         except Exception as e:

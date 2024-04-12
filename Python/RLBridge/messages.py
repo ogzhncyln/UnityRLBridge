@@ -41,11 +41,11 @@ class BeginConnectionRequestMsg(MsgObj):
 
 class BeginConnectionResponseMsg(MsgObj):
 
-    def __init__(self,observation_size,continuous_action_size,discrete_action_size,clients):
+    def __init__(self,observation_size,continuous_action_size,discrete_action_size,agent_names):
         self.observation_size = observation_size
         self.continuous_action_size = continuous_action_size
         self.discrete_action_size = discrete_action_size
-        self.clients = clients
+        self.agent_names = agent_names
     
 def JsonToMessage(json_content):
     return Message(**json.loads(json_content))

@@ -21,7 +21,7 @@ namespace RLBridge
         public string title;
         public string json_content;
 
-        public Message(string title,string json_content)
+        public Message(string title, string json_content)
         {
             this.title = title;
             this.json_content = json_content;
@@ -44,14 +44,14 @@ namespace RLBridge
         public int observation_size;
         public int continuous_action_size;
         public int discrete_action_size;
-        public string[] clients;
+        public string[] agents;
 
-        public BeginConnectResponseMsg(int observation_size, int continuous_action_size, int discrete_action_size, string[] clients)
+        public BeginConnectResponseMsg(int observation_size, int continuous_action_size, int discrete_action_size, string[] agents)
         {
             this.observation_size = observation_size;
             this.continuous_action_size = continuous_action_size;
             this.discrete_action_size = discrete_action_size;
-            this.clients = clients;
+            this.agents = agents;
         }
     }
 
@@ -79,7 +79,7 @@ namespace RLBridge
         public float reward;
         public bool done;
 
-        public StatusMsg(string behavior_name,string agent_name, double[] observations, float reward, bool done)
+        public StatusMsg(string behavior_name, string agent_name, double[] observations, float reward, bool done)
         {
             this.behavior_name = behavior_name;
             this.agent_name = agent_name;
