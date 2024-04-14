@@ -11,7 +11,7 @@ string behavior_name = agent_behavior.behavior_name;
 string agent_name = agent_behavior.agent_name;
 ```
 
-On the Python side, the `behavior_name` component is located under the Bridge class. For agents with the corresponding `behavior_name` component on the Python side, their `agent_name` components are stored as a list under the `agent_name` attribute under the Bridge class.
+On the Python side, the `behavior_name` component is located under the Bridge class. For agents with the corresponding `behavior_name` component on the Python side, their `agent_names` components are stored as a list under the `agent_names` attribute under the Bridge class.
 ```
 behavior_name = bridge.behavior_name
 agent_name = bridge.agent_names[agent_index]
