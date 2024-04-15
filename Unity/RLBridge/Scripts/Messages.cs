@@ -44,14 +44,14 @@ namespace RLBridge
         public int observation_size;
         public int continuous_action_size;
         public int discrete_action_size;
-        public string[] agents;
+        public string[] agent_names;
 
-        public BeginConnectResponseMsg(int observation_size, int continuous_action_size, int discrete_action_size, string[] agents)
+        public BeginConnectResponseMsg(int observation_size, int continuous_action_size, int discrete_action_size, string[] agent_names)
         {
             this.observation_size = observation_size;
             this.continuous_action_size = continuous_action_size;
             this.discrete_action_size = discrete_action_size;
-            this.agents = agents;
+            this.agent_names = agent_names;
         }
     }
 
