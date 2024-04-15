@@ -17,6 +17,12 @@ behavior_name = bridge.behavior_name
 agent_name = bridge.agent_names[agent_index]
 ```
 
+`bridge.send_action(agent_name,continuous_actions,discrete_actions)` It is a function used to send actions to the environment. It takes parameters of type string for agent_name and lists for continuous_actions and discrete_actions.
+
+`bridge.reset(agent_name)` It is used to reset the environment. It only takes the parameter agent_name, which is of type string.
+
+`bridge.close_connection()` It is used to disconnect the connection.
+
 ### Unity Side ###
 To use the RLBridge package in Unity, first create an empty GameObject, and then add the `Bridge.cs` script to this GameObject. Below are some features described for the Bridge script.
 
@@ -45,3 +51,25 @@ public class YourAgentScript : AgentBehavior
 ```
 
 Below are the details of the AgentBehavior
+
+`behaviorName` It represents the behavior name of the agent.
+
+`observationSize` It represents the size of the agent's observation.
+
+`continuousActionSize` It represents the size of the continuous action space.
+
+`discreteActionSize` It represents the size of the discrete action space.
+
+`maxSteps` It represents the maximum number of steps the agent can take in an episode.
+
+`public virtual void OnConnected()` It is the function to be called when the simulation starts. If it is desired to be used, it needs to be overridden.
+
+`public abstract void OnEpisodeBegin()` It is the function to be called when the episode starts. It must be overridden.
+
+`public abstract void CollectObservations(ref double[] observations)` It is used when gathering observations from the agent. It is called with a parameter of type double[], and the observation should be processed into the corresponding index. It must be overridden.
+
+`public abstract void OnActionReceived(double[] continuous_actions, int[] discrete_actions)`  It is the function to be called when an action is to be taken. It is called with two parameters: continuous_actions of type double[] and discrete_actions of type int[]. Information required for the action should be extracted from these two parameters and converted into an action within the environment. It must be overridden.
+
+`public void AddReward(float reward)` It is used for rewarding.
+
+`public void EndEpisode()` It is used to terminate the episode.
