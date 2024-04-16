@@ -23,7 +23,6 @@ agent_name = bridge.agent_names[agent_index]
 
 `bridge.close_connection()` It is used to disconnect the connection.
 
-### Unity Side ###
 To use the RLBridge package in Unity, first create an empty GameObject, and then add the `Bridge.cs` script to this GameObject. Below are some features described for the Bridge script.
 
 `agents` You need to add the agents present in your scene to this section for the bridge to access them.
